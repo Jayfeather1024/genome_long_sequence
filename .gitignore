@@ -1,0 +1,7 @@
+*.log
+*.pkl
+*.json
+*.pt
+*.wandb
+*.npy
+*.txt

@@ -1,0 +1,2 @@
+stdbuf -oL python run_time_clm.py --model_name_or_path gpt2 --dataset_name wikisection --do_train --do_eval --per_device_eval_batch_size=1 --per_device_train_batch_size=1 --save_total_limit=1 --load_best_model_at_end=True --overwrite_output_dir --num_train_epochs=10 --seed=1 --encoder_filepath=../../../../outputs/2022-06-02/11-13-47/wikisection_tc32/lightning_logs/version_0/checkpoints/epoch=99-step=258199.ckpt --latent_dim=32 --output_dir LM_wikisection_32 --evaluation_strategy=steps --eval_steps=1000 --use_contrastive_embeddings > log.train.decoder 2>&1&
+

@@ -1,0 +1,42 @@
+wandb_settings:
+  exp_name: encoder_training_requires_grad_single_layer
+  exp_dir: /home/jiongxiao//jiongxiao_roc_stories/encoder_28289/run_l0.0005_b32_cbow_diff/
+  project: language_modeling_via_stochastic_processes
+  group: encoder
+  dryrun: true
+data_params:
+  name: roc_storiescbow
+  include_section_ids_in_tokenizer: true
+  data_seed: 1337
+  k: 5
+  shuffle: true
+model_params:
+  encoder: cl
+  latent_dim: 32
+  n_layers: 2
+  eps: 1.0e-06
+  hidden_size: 128
+  language_encoder: GPT2
+  filepath: null
+  pretrained_name: null
+  single_layer: false
+  finetune_gpt2: false
+  use_log: false
+loss_params:
+  loss: cbow_diff
+  name: simclr
+optim_params:
+  batch_size: 32
+  decay_steps: 50000.0
+  decay_factor: 0.1
+  learning_rate: 0.0005
+  moving_average_decay: 0.9999
+  momentum: 0.9
+experiment_params:
+  validate: true
+  checkpoint_epochs: 1
+  continue_from_checkpoint: true
+  num_epochs: 100
+  cuda: true
+  seed: 28289
+  data_loader_workers: 0
