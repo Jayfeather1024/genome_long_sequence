@@ -421,18 +421,11 @@ def main():
                     if args.encoder_mode.startswith('gaussian_'):
                         gaussian = float(args.encoder_mode.split('_')[-1])
                         total_cl_feats = total_cl_feats + gaussian * torch.randn(*total_cl_feats.shape).cuda()
+                    total_cl_feats.fill_(0)
                     total_cl_feats = model.proj_model(total_cl_feats)
                     total_cl_feats.fill_(0)
 
-                    if not use_oracle:
-                        cl_feats = data[num_example %len(eval_dataset)][f'masked_{sss}'].cuda()
-                        if args.encoder_mode.startswith('gaussian_'):
-                            gaussian = float(args.encoder_mode.split('_')[-1])
-                            cl_feats = cl_feats + gaussian * torch.randn(*cl_feats.shape).cuda()
-                        cl_feats = model.proj_model(cl_feats)
-                    else:
-                        cl_feats = total_cl_feats[sss]
-                    cl_feats.fill_(0)
+                    cl_feats = total_cl_feats[sss]
 
                     input_ids = tokenizer.encode(prefix, add_special_tokens=False, return_tensors='pt').cuda()
                     prefix_length = input_ids.shape[-1]
