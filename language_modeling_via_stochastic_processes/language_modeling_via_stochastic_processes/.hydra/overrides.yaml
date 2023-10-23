@@ -1,6 +1,0 @@
-- experiment_params.seed=28289
-- wandb_settings.exp_dir=/home/jiongxiao//jiongxiao_roc_stories/encoder_28289/run_l0.0005_b32_cbow_diff/
-- data_params.name=roc_storiescbow
-- model_params.latent_dim=32
-- optim_params.learning_rate=0.0005
-- experiment_params.num_epochs=100
