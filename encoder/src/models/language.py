@@ -110,7 +110,7 @@ class GPT2NeoXOUEncoder(nn.Module):
 
     def _init_model(self, single_layer=False):
 
-        tokenizer_path = '/home/jayfeather/language_modeling_via_stochastic_processes/genslm_model/codon_wordlevel_100vocab_added.json'
+        tokenizer_path = '/eagle/projects/CVD-Mol-AI/for_yuntian/genome_model/codon_wordlevel_100vocab_added.json'
         print (f'Loading tokenizer from {tokenizer_path}')
         tokenizer = PreTrainedTokenizerFast(tokenizer_object=Tokenizer.from_file(tokenizer_path))
         if tokenizer.eos_token is None:
@@ -118,11 +118,11 @@ class GPT2NeoXOUEncoder(nn.Module):
         if tokenizer.pad_token is None:
             tokenizer.add_special_tokens({'pad_token': '[PAD]'})
         print (f'New vocab size: {len(tokenizer)}')
-        base_config = AutoConfig.from_pretrained('/home/jayfeather/language_modeling_via_stochastic_processes/genslm_model/neox_25,290,752.json')
+        base_config = AutoConfig.from_pretrained('/eagle/projects/CVD-Mol-AI/for_yuntian/genome_model/neox_25,290,752.json')
         self.model = AutoModelForCausalLM.from_config(base_config)
         n_params = sum(dict((p.data_ptr(), p.numel()) for p in self.model.parameters()).values())
         print (f"Training new model from scratch - Total size={n_params/2**20:.2f}M params")
-        a = torch.load('/home/jayfeather/language_modeling_via_stochastic_processes/genslm_model/patric_25m_epoch01-val_loss_0.57_bias_removed.pt')['state_dict']
+        a = torch.load('/eagle/projects/CVD-Mol-AI/for_yuntian/genome_model/patric_25m_epoch01-val_loss_0.57_bias_removed.pt')['state_dict']
         b = {}
         for k in a:
             #b[k.replace('module.model.', '')] = a[k]
