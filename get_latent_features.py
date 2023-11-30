@@ -39,11 +39,11 @@ def load_tokenizer(tokenizer_path):
     return tokenizer
 
 
-
 def get_latent_feature(sequence, model, tokenizer, device='cuda'):
+    model = model.to(device)
     sequence_tokenize = tokenizer(sequence, padding=True, return_tensors='pt')
-    input_ids = sequence_tokenize['input_ids']
-    attention_mask = sequence_tokenize['attention_mask']
+    input_ids = sequence_tokenize['input_ids'].to(device)
+    attention_mask = sequence_tokenize['attention_mask'].to(device)
     latent_feature = model.forward(input_ids=input_ids, attention_mask=attention_mask)
     return latent_feature
 
