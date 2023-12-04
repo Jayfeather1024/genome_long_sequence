@@ -28,7 +28,7 @@ from get_logits import load_encoder, load_decoder, get_logits
 # file path
 feature_file = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian/genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/diffusion/seed_81482_lr0.00002/sample_21395_repaint/zs.pt.masked.seeds.1234"
 encoder_path = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian/genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/checkpoints/epoch=2-step=18746.ckpt"
-decoder_path = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian//genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/decoder_23434/decoder_gpt2_e5_full/pytorch_model.bin"
+decoder_path = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian/genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/decoder_23434/decoder_gpt2_e5_full/pytorch_model.bin"
 tokenizer_path = "/eagle/projects/CVD-Mol-AI/for_yuntian/genome_model/codon_wordlevel_100vocab_added.json"
 
 # load features
@@ -55,7 +55,7 @@ from get_sequence import load_encoder, load_decoder, generate_sequence
 # file path
 feature_file = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian/genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/diffusion/seed_81482_lr0.00002/sample_21395_repaint/zs.pt.masked.seeds.1234"
 encoder_path = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian/genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/checkpoints/epoch=2-step=18746.ckpt"
-decoder_path = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian//genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/decoder_23434/decoder_gpt2_e5_full/pytorch_model.bin"
+decoder_path = "/lus/eagle/projects/CVD-Mol-AI/for_yuntian/genome_results/encoder_genslm_28289_final/run_l0.0005_b32_cbow_diff/decoder_23434/decoder_gpt2_e5_full/pytorch_model.bin"
 tokenizer_path = "/eagle/projects/CVD-Mol-AI/for_yuntian/genome_model/codon_wordlevel_100vocab_added.json"
 
 # load features
